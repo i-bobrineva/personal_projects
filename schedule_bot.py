@@ -26,7 +26,7 @@ async def handle_response(text: str) -> str:
         return 'На какое время поставить напоминалку?'
     if '21:00' in text:
         return 'Сообщение придёт в 21:00 в четверг'
-    return 'i dont understand'
+    return 'i dont understand you'
 
 async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f'Update {update} caused error {context.error}')
