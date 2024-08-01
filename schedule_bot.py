@@ -3,9 +3,6 @@ from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-TELEGRAM_TOKEN: Final = "7041545993:AAES0PnrOvkiQKVRD_09qH88dLBRsJ4rJQM"
-BOT_USERNAME: Final = "@RecallAllBot"
-
 
 # Command Handlers
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -36,7 +33,7 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 if __name__ == "__main__":
     print('starting bot...')
-    app = Application.builder().token(TELEGRAM_TOKEN).build()
+    app = Application.builder().token(config).build()
 
     # Commands
     app.add_handler(CommandHandler('start', start_command))
